@@ -694,6 +694,13 @@ class Tropo(object):
         """
         self._steps.append(Transfer(to, **options).obj)
 
+    def RenderDict(self):
+        """
+        Return a dict which can be returned from a function with a json
+        decorator, rather than using RenderJson
+        """
+        return { 'tropo': self._steps }
+
     def RenderJson(self, pretty=False):
         """
         Render a Tropo object into a Json string.
